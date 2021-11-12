@@ -31,7 +31,8 @@ class CalculatorTest {
 	@DisplayName("第二引数が0の時例外")
 	void testDivide_1() {
 		try {
-			Calculator.divide(1, 0);
+			Calculator calculator = new Calculator();
+			calculator.divide(1, 0);
 			fail("例外が発生しませんでした");
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
@@ -41,7 +42,8 @@ class CalculatorTest {
 	@Test
 	@DisplayName("第二引数が0ではないとき")
 	void testDivide_2() {
-		int answer = Calculator.divide(6, 3);
+		Calculator calculator = new Calculator();
+		int answer = calculator.divide(6, 3);
 		assertEquals(2.0, answer, "値が正しくありません");
 	}
 
